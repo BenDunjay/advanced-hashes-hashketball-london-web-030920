@@ -127,6 +127,7 @@ def game_hash
 }
 end  
 
+
 def num_points_scored(players_name)
   game_hash.each do |team, players|
     players.each do |team_data, data|
@@ -213,22 +214,6 @@ def player_stats(players_name)
   player_hash
 end
 
-
-
-# def big_shoe_rebounds
-#   game_hash.each do |team, players|
-#     players.each do |player, data|
-#         largest_shoe_size = data[0][:shoe]
-#           data.each do |player_data| 
-#             if player_data[:shoe] > largest_shoe_size
-#               largest_shoe_size = player_data[:shoe]
-#               binding.pry
-#             end
-#           end
-#     end
-#   end 
-# end 
-
 def big_shoe_rebounds
   largest_shoe_size = 0
   number_rebounds = 0
@@ -296,10 +281,13 @@ longest_name = ""
   longest_name
 end
 
-
+def players_hash(players)
+  binding.pry
+  
+end
 
 def long_name_steals_a_ton?
-    points_stolen = 0 
+  points_stolen = 0 
   players_name = ""
   game_hash.each do |place, team|
     team[:players].each do |player_data|
@@ -311,6 +299,8 @@ def long_name_steals_a_ton?
   end
   players_name == player_with_longest_name
 end
+
+
 
 
 
